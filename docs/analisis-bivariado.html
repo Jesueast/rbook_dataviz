@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Analisis Bivariado | bookdown-demo.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Analisis Bivariado | bookdown-demo.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Analisis Bivariado | bookdown-demo.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="analisis-univariado.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html"><i class="fa fa-check"></i><b>1</b> ANALISIS EXPLORATORIO DE DATOS</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#descripcion-del-problema"><i class="fa fa-check"></i><b>1.0.1</b> Descripcion del problema</a></li>
+<li class="chapter" data-level="1.0.2" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#carga-de-datos"><i class="fa fa-check"></i><b>1.0.2</b> Carga de Datos</a></li>
+<li class="chapter" data-level="1.0.3" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#exploracion-inicial"><i class="fa fa-check"></i><b>1.0.3</b> Exploracion inicial</a></li>
+<li class="chapter" data-level="1.1" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#naturaleza-de-los-datos"><i class="fa fa-check"></i><b>1.1</b> Naturaleza de los datos</a></li>
+<li class="chapter" data-level="1.2" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#caracteristicas-del-dataset"><i class="fa fa-check"></i><b>1.2</b> Caracteristicas del dataset</a></li>
+<li class="chapter" data-level="1.3" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#revision-de-datos-faltantes"><i class="fa fa-check"></i><b>1.3</b> Revision de datos faltantes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="analisis-univariado.html"><a href="analisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Analisis Univariado</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="analisis-univariado.html"><a href="analisis-univariado.html#tasa-de-colocacion-total"><i class="fa fa-check"></i><b>2.1</b> Tasa De colocacion total</a></li>
+<li class="chapter" data-level="2.2" data-path="analisis-univariado.html"><a href="analisis-univariado.html#creditos-de-consumo"><i class="fa fa-check"></i><b>2.2</b> Creditos De Consumo</a></li>
+<li class="chapter" data-level="2.3" data-path="analisis-univariado.html"><a href="analisis-univariado.html#creditos-de-tesoreria"><i class="fa fa-check"></i><b>2.3</b> Creditos De Tesoreria</a></li>
+<li class="chapter" data-level="2.4" data-path="analisis-univariado.html"><a href="analisis-univariado.html#creditos-ordinarios"><i class="fa fa-check"></i><b>2.4</b> Creditos Ordinarios</a></li>
+<li class="chapter" data-level="2.5" data-path="analisis-univariado.html"><a href="analisis-univariado.html#creditos-preferenciales"><i class="fa fa-check"></i><b>2.5</b> Creditos Preferenciales</a></li>
+<li class="chapter" data-level="2.6" data-path="analisis-univariado.html"><a href="analisis-univariado.html#tasa-de-colocacion-br"><i class="fa fa-check"></i><b>2.6</b> Tasa De Colocacion BR</a></li>
+<li class="chapter" data-level="2.7" data-path="analisis-univariado.html"><a href="analisis-univariado.html#tasa-de-colocacion-sin-tesoreria"><i class="fa fa-check"></i><b>2.7</b> Tasa De Colocacion Sin Tesoreria</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html"><i class="fa fa-check"></i><b>3</b> Analisis Bivariado</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-fecha"><i class="fa fa-check"></i><b>3.1</b> Tasa de colocacion Total vs Fecha</a></li>
+<li class="chapter" data-level="3.2" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-consumo"><i class="fa fa-check"></i><b>3.2</b> Tasa de Colocacion Total VS Creditos Consumo</a></li>
+<li class="chapter" data-level="3.3" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-tesoreria"><i class="fa fa-check"></i><b>3.3</b> Tasa de Colocacion Total VS Creditos Tesoreria</a></li>
+<li class="chapter" data-level="3.4" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-ordinarios"><i class="fa fa-check"></i><b>3.4</b> Tasa de Colocacion Total VS Creditos Ordinarios</a></li>
+<li class="chapter" data-level="3.5" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-preferenciales"><i class="fa fa-check"></i><b>3.5</b> Tasa de Colocacion Total VS Creditos Preferenciales</a></li>
+<li class="chapter" data-level="3.6" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-tasa-colocacion-br"><i class="fa fa-check"></i><b>3.6</b> Tasa de Colocacion Total VS Tasa Colocacion BR</a></li>
+<li class="chapter" data-level="3.7" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-tasa-colocacion-sin-tesoreria"><i class="fa fa-check"></i><b>3.7</b> Tasa de Colocacion Total VS Tasa Colocacion Sin Tesoreria</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analisis-bivariado" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Analisis Bivariado<a href="analisis-bivariado.html#analisis-bivariado" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tasa-de-colocacion-total-vs-fecha" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Tasa de colocacion Total vs Fecha<a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-fecha" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="analisis-bivariado.html#cb1-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Fecha, <span class="at">y =</span> TasaColocacionTotal)) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="analisis-bivariado.html#cb1-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-3"><a href="analisis-bivariado.html#cb1-3" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-4"><a href="analisis-bivariado.html#cb1-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-5"><a href="analisis-bivariado.html#cb1-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relacion entre Tasa de Colocacion Total y  el tiempo&quot;</span>,</span>
+<span id="cb1-6"><a href="analisis-bivariado.html#cb1-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tiempo&quot;</span>,</span>
+<span id="cb1-7"><a href="analisis-bivariado.html#cb1-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TasaColocacionTotal&quot;</span></span>
+<span id="cb1-8"><a href="analisis-bivariado.html#cb1-8" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Este gráfico de dispersión muestra la evolución de la Tasa de Colocación Total a lo largo del tiempo, donde se distinguen varias fases: a finales de los 90 e inicios de los 2000 se observan niveles muy altos con un pico marcado, seguido de una caída significativa y un periodo de relativa estabilidad en valores más bajos; entre 2010 y 2020 aparecen fluctuaciones con picos intermedios que sugieren ciclos de ajuste en la política monetaria o respuesta a crisis económicas; y alrededor de 2020 se aprecia otro repunte posiblemente asociado a coyunturas como la pandemia. En conjunto, el gráfico evidencia que la tasa no es estacionaria, sino que responde a shocks y tendencias macroeconómicas, lo que confirma la necesidad de un análisis temporal más profundo antes de aplicar modelos predictivos que capturen tanto la tendencia como los ciclos y cambios estructurales del sistema financiero colombiano.</p>
+</div>
+<div id="tasa-de-colocacion-total-vs-creditos-consumo" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Tasa de Colocacion Total VS Creditos Consumo<a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-consumo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="analisis-bivariado.html#cb2-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> CreditosConsumo, <span class="at">y =</span> TasaColocacionTotal)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="analisis-bivariado.html#cb2-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="analisis-bivariado.html#cb2-3" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-4"><a href="analisis-bivariado.html#cb2-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-5"><a href="analisis-bivariado.html#cb2-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relacion entre Tasa de Colocacion Total y Creditos Consumo&quot;</span>,</span>
+<span id="cb2-6"><a href="analisis-bivariado.html#cb2-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;CreditosConsumo&quot;</span>,</span>
+<span id="cb2-7"><a href="analisis-bivariado.html#cb2-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TasaColocacionTotal&quot;</span></span>
+<span id="cb2-8"><a href="analisis-bivariado.html#cb2-8" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+Este diagrama de dispersión muestra la relación entre la Tasa de Colocación Total y los Créditos de Consumo, con una clara tendencia positiva: a mayor volumen de créditos de consumo, mayor tasa de colocación total. Aunque no se ha calculado la correlación estadística, la visualización sugiere una asociación significativa, lo que convierte a los créditos de consumo en un factor relevante para explicar y anticipar el comportamiento de la tasa de colocación total en futuros modelos predictivos.</p>
+</div>
+<div id="tasa-de-colocacion-total-vs-creditos-tesoreria" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Tasa de Colocacion Total VS Creditos Tesoreria<a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-tesoreria" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="analisis-bivariado.html#cb3-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> CreditosTesoreria, <span class="at">y =</span> TasaColocacionTotal)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="analisis-bivariado.html#cb3-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="analisis-bivariado.html#cb3-3" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-4"><a href="analisis-bivariado.html#cb3-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-5"><a href="analisis-bivariado.html#cb3-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relacion entre Tasa de Colocacion Total y Creditos Tesoreria&quot;</span>,</span>
+<span id="cb3-6"><a href="analisis-bivariado.html#cb3-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;CreditosTesoreria&quot;</span>,</span>
+<span id="cb3-7"><a href="analisis-bivariado.html#cb3-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TasaColocacionTotal&quot;</span></span>
+<span id="cb3-8"><a href="analisis-bivariado.html#cb3-8" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+Este diagrama de dispersión muestra la relación entre la Tasa de Colocación Total y los Créditos de Tesorería; aunque no se ha calculado la correlación numérica, la visualización sugiere una asociación positiva, donde mayores créditos de tesorería se acompañan de incrementos en la tasa de colocación total. Este patrón indica que la tesorería influye directamente en la dinámica de las tasas y constituye un insumo clave para confirmar la relación mediante un cálculo formal de correlación y para futuros modelos predictivos.</p>
+</div>
+<div id="tasa-de-colocacion-total-vs-creditos-ordinarios" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Tasa de Colocacion Total VS Creditos Ordinarios<a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-ordinarios" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="analisis-bivariado.html#cb4-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> CreditosOrdinarios, <span class="at">y =</span> TasaColocacionTotal)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="analisis-bivariado.html#cb4-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="analisis-bivariado.html#cb4-3" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-4"><a href="analisis-bivariado.html#cb4-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-5"><a href="analisis-bivariado.html#cb4-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relacion entre Tasa de Colocacion Total y Creditos Ordinarios&quot;</span>,</span>
+<span id="cb4-6"><a href="analisis-bivariado.html#cb4-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;CreditosOrdinarios&quot;</span>,</span>
+<span id="cb4-7"><a href="analisis-bivariado.html#cb4-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TasaColocacionTotal&quot;</span></span>
+<span id="cb4-8"><a href="analisis-bivariado.html#cb4-8" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+Este diagrama de dispersión muestra la relación entre la Tasa de Colocación Total y los Créditos Ordinarios; aunque no se ha calculado la correlación numérica, la visualización sugiere una asociación positiva, donde mayores créditos ordinarios tienden a acompañarse de incrementos en la tasa de colocación total. Este patrón señala que los créditos ordinarios son un factor relevante en la dinámica de las tasas y constituye un insumo clave para confirmar la relación mediante un cálculo formal de correlación y para futuros modelos predictivos.</p>
+</div>
+<div id="tasa-de-colocacion-total-vs-creditos-preferenciales" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Tasa de Colocacion Total VS Creditos Preferenciales<a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-preferenciales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="analisis-bivariado.html#cb5-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> CreditosPreferenciales, <span class="at">y =</span> TasaColocacionTotal)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="analisis-bivariado.html#cb5-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="analisis-bivariado.html#cb5-3" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-4"><a href="analisis-bivariado.html#cb5-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-5"><a href="analisis-bivariado.html#cb5-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relacion entre Tasa de Colocacion Total y Creditos Preferenciales&quot;</span>,</span>
+<span id="cb5-6"><a href="analisis-bivariado.html#cb5-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;CreditosPreferenciales&quot;</span>,</span>
+<span id="cb5-7"><a href="analisis-bivariado.html#cb5-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TasaColocacionTotal&quot;</span></span>
+<span id="cb5-8"><a href="analisis-bivariado.html#cb5-8" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+Este diagrama de dispersión muestra una asociación positiva entre la Tasa de Colocación Total y los Créditos Preferenciales; mayores volúmenes de créditos preferenciales tienden a acompañarse de incrementos en la tasa, lo que señala su influencia en la dinámica financiera y la necesidad de confirmar la relación con un cálculo formal de correlación para futuros modelos predictivos.</p>
+</div>
+<div id="tasa-de-colocacion-total-vs-tasa-colocacion-br" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Tasa de Colocacion Total VS Tasa Colocacion BR<a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-tasa-colocacion-br" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="analisis-bivariado.html#cb6-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> TasaColocacionBR, <span class="at">y =</span> TasaColocacionTotal)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="analisis-bivariado.html#cb6-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="analisis-bivariado.html#cb6-3" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-4"><a href="analisis-bivariado.html#cb6-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-5"><a href="analisis-bivariado.html#cb6-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relacion entre Tasa de Colocacion Total y Tasa Colocacion BR&quot;</span>,</span>
+<span id="cb6-6"><a href="analisis-bivariado.html#cb6-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;TasaColocacionBR&quot;</span>,</span>
+<span id="cb6-7"><a href="analisis-bivariado.html#cb6-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TasaColocacionTotal&quot;</span></span>
+<span id="cb6-8"><a href="analisis-bivariado.html#cb6-8" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+Este diagrama de dispersión muestra la relación entre la Tasa de Colocación Total y la Tasa de Colocación del Banco de la República (BR); aunque aún no se ha calculado la correlación numérica, la visualización sugiere una asociación positiva clara, donde incrementos en la tasa de colocación del BR tienden a acompañarse de incrementos en la tasa de colocación total. Este patrón es consistente con la lógica financiera, ya que las decisiones de política monetaria del Banco de la República influyen directamente en las condiciones de colocación del sistema, y constituye un insumo clave para confirmar la relación mediante un cálculo formal de correlación y para futuros modelos predictivos que busquen capturar la sensibilidad del mercado frente a variaciones en las tasas oficiales.</p>
+</div>
+<div id="tasa-de-colocacion-total-vs-tasa-colocacion-sin-tesoreria" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Tasa de Colocacion Total VS Tasa Colocacion Sin Tesoreria<a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-tasa-colocacion-sin-tesoreria" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="analisis-bivariado.html#cb7-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> TasaColocacionSinTesoreria, <span class="at">y =</span> TasaColocacionTotal)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="analisis-bivariado.html#cb7-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="analisis-bivariado.html#cb7-3" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a href="analisis-bivariado.html#cb7-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-5"><a href="analisis-bivariado.html#cb7-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relacion entre Tasa de Colocacion Total y Tasa Colocacion Sin Tesoreria&quot;</span>,</span>
+<span id="cb7-6"><a href="analisis-bivariado.html#cb7-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;TasaColocacionSinTesoreria&quot;</span>,</span>
+<span id="cb7-7"><a href="analisis-bivariado.html#cb7-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TasaColocacionTotal&quot;</span></span>
+<span id="cb7-8"><a href="analisis-bivariado.html#cb7-8" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+Este diagrama muestra una asociación positiva entre la Tasa de Colocación Total y la Tasa de Colocación sin Tesorería; mayores valores en la tasa sin tesorería se acompañan de incrementos en la tasa total, reflejando condiciones financieras comunes y la influencia de factores macroeconómicos, lo que debe confirmarse con un cálculo formal de correlación para fortalecer futuros modelos predictivos.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analisis-univariado.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/03-ANALISIS_BIVARIADO.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

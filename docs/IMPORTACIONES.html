@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Analisis Exploratorio De Datos | bookdown-demo.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Analisis Exploratorio De Datos | bookdown-demo.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Analisis Exploratorio De Datos | bookdown-demo.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="analisis-univariado.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html"><i class="fa fa-check"></i><b>1</b> Analisis Exploratorio De Datos</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#descripcion-del-problema"><i class="fa fa-check"></i><b>1.0.1</b> Descripcion del problema</a></li>
+<li class="chapter" data-level="1.0.2" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#carga-de-datos"><i class="fa fa-check"></i><b>1.0.2</b> Carga de Datos</a></li>
+<li class="chapter" data-level="1.0.3" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#exploracion-inicial"><i class="fa fa-check"></i><b>1.0.3</b> Exploracion inicial</a></li>
+<li class="chapter" data-level="1.1" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#naturaleza-de-los-datos"><i class="fa fa-check"></i><b>1.1</b> Naturaleza de los datos</a></li>
+<li class="chapter" data-level="1.2" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#caracteristicas-del-dataset"><i class="fa fa-check"></i><b>1.2</b> Caracteristicas del dataset</a></li>
+<li class="chapter" data-level="1.3" data-path="IMPORTACIONES.html"><a href="IMPORTACIONES.html#revision-de-datos-faltantes"><i class="fa fa-check"></i><b>1.3</b> Revision de datos faltantes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="analisis-univariado.html"><a href="analisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Analisis Univariado</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="analisis-univariado.html"><a href="analisis-univariado.html#tasa-de-colocacion-total"><i class="fa fa-check"></i><b>2.1</b> Tasa De colocacion total</a></li>
+<li class="chapter" data-level="2.2" data-path="analisis-univariado.html"><a href="analisis-univariado.html#creditos-de-consumo"><i class="fa fa-check"></i><b>2.2</b> Creditos De Consumo</a></li>
+<li class="chapter" data-level="2.3" data-path="analisis-univariado.html"><a href="analisis-univariado.html#creditos-de-tesoreria"><i class="fa fa-check"></i><b>2.3</b> Creditos De Tesoreria</a></li>
+<li class="chapter" data-level="2.4" data-path="analisis-univariado.html"><a href="analisis-univariado.html#creditos-ordinarios"><i class="fa fa-check"></i><b>2.4</b> Creditos Ordinarios</a></li>
+<li class="chapter" data-level="2.5" data-path="analisis-univariado.html"><a href="analisis-univariado.html#creditos-preferenciales"><i class="fa fa-check"></i><b>2.5</b> Creditos Preferenciales</a></li>
+<li class="chapter" data-level="2.6" data-path="analisis-univariado.html"><a href="analisis-univariado.html#tasa-de-colocacion-br"><i class="fa fa-check"></i><b>2.6</b> Tasa De Colocacion BR</a></li>
+<li class="chapter" data-level="2.7" data-path="analisis-univariado.html"><a href="analisis-univariado.html#tasa-de-colocacion-sin-tesoreria"><i class="fa fa-check"></i><b>2.7</b> Tasa De Colocacion Sin Tesoreria</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html"><i class="fa fa-check"></i><b>3</b> Analisis Bivariado</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-fecha"><i class="fa fa-check"></i><b>3.1</b> Tasa de colocacion Total vs Fecha</a></li>
+<li class="chapter" data-level="3.2" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-consumo"><i class="fa fa-check"></i><b>3.2</b> Tasa de Colocacion Total VS Creditos Consumo</a></li>
+<li class="chapter" data-level="3.3" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-tesoreria"><i class="fa fa-check"></i><b>3.3</b> Tasa de Colocacion Total VS Creditos Tesoreria</a></li>
+<li class="chapter" data-level="3.4" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-ordinarios"><i class="fa fa-check"></i><b>3.4</b> Tasa de Colocacion Total VS Creditos Ordinarios</a></li>
+<li class="chapter" data-level="3.5" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-creditos-preferenciales"><i class="fa fa-check"></i><b>3.5</b> Tasa de Colocacion Total VS Creditos Preferenciales</a></li>
+<li class="chapter" data-level="3.6" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-tasa-colocacion-br"><i class="fa fa-check"></i><b>3.6</b> Tasa de Colocacion Total VS Tasa Colocacion BR</a></li>
+<li class="chapter" data-level="3.7" data-path="analisis-bivariado.html"><a href="analisis-bivariado.html#tasa-de-colocacion-total-vs-tasa-colocacion-sin-tesoreria"><i class="fa fa-check"></i><b>3.7</b> Tasa de Colocacion Total VS Tasa Colocacion Sin Tesoreria</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="IMPORTACIONES" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Analisis Exploratorio De Datos<a href="IMPORTACIONES.html#IMPORTACIONES" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<pre><code>## 
+## Adjuntando el paquete: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre><code>## Warning: package &#39;kableExtra&#39; was built under R version 4.5.2</code></pre>
+<pre><code>## 
+## Adjuntando el paquete: &#39;kableExtra&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     group_rows</code></pre>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.5.2</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ forcats   1.0.0     ✔ readr     2.1.5
+## ✔ ggplot2   3.5.2     ✔ stringr   1.5.1
+## ✔ lubridate 1.9.4     ✔ tibble    3.3.0
+## ✔ purrr     1.1.0     ✔ tidyr     1.3.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter()          masks stats::filter()
+## ✖ kableExtra::group_rows() masks dplyr::group_rows()
+## ✖ dplyr::lag()             masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre><code>## Warning: package &#39;Amelia&#39; was built under R version 4.5.2</code></pre>
+<pre><code>## Cargando paquete requerido: Rcpp
+## ## 
+## ## Amelia II: Multiple Imputation
+## ## (Version 1.8.3, built: 2024-11-07)
+## ## Copyright (C) 2005-2026 James Honaker, Gary King and Matthew Blackwell
+## ## Refer to http://gking.harvard.edu/amelia/ for more information
+## ##</code></pre>
+<div id="descripcion-del-problema" class="section level3 hasAnchor" number="1.0.1">
+<h3><span class="header-section-number">1.0.1</span> Descripcion del problema<a href="IMPORTACIONES.html#descripcion-del-problema" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El presente análisis se centra en un conjunto de datos históricos del Banco de la República, que recoge información mensual desde 1998 sobre distintos tipos de créditos (consumo, tesorería, ordinarios y preferenciales) y las tasas de colocación asociadas (Banco de la República, sin tesorería y total). La variable Fecha constituye el eje temporal que organiza las observaciones y permite estudiar la evolución de estos indicadores financieros a lo largo de más de dos décadas. Este carácter secuencial convierte al dataset en una serie de tiempo, ideal para explorar tendencias, ciclos y posibles patrones de estacionalidad en el comportamiento del crédito y las tasas de interés en Colombia. El objetivo del análisis exploratorio será identificar regularidades, cambios estructurales y relaciones entre las diferentes modalidades de crédito y las tasas de colocación, como paso previo a la construcción de modelos predictivos y de interpretación económica.</p>
+</div>
+<div id="carga-de-datos" class="section level3 hasAnchor" number="1.0.2">
+<h3><span class="header-section-number">1.0.2</span> Carga de Datos<a href="IMPORTACIONES.html#carga-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="IMPORTACIONES.html#cb12-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;C:/Users/DEYVYS MARIA VALDES/Documents/DATAVIZ/informe/r/File.xlsx&quot;</span>, <span class="at">skip =</span> <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## New names:
+## • `` -&gt; `...1`
+## • `Porcentaje` -&gt; `Porcentaje...2`
+## • `Porcentaje` -&gt; `Porcentaje...3`
+## • `Porcentaje` -&gt; `Porcentaje...4`
+## • `Porcentaje` -&gt; `Porcentaje...5`
+## • `Porcentaje` -&gt; `Porcentaje...6`
+## • `Porcentaje` -&gt; `Porcentaje...7`
+## • `Porcentaje` -&gt; `Porcentaje...8`</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="IMPORTACIONES.html#cb14-1" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Fecha&quot;</span>,</span>
+<span id="cb14-2"><a href="IMPORTACIONES.html#cb14-2" tabindex="-1"></a>                    <span class="st">&quot;CreditosConsumo&quot;</span>,</span>
+<span id="cb14-3"><a href="IMPORTACIONES.html#cb14-3" tabindex="-1"></a>                    <span class="st">&quot;CreditosTesoreria&quot;</span>,</span>
+<span id="cb14-4"><a href="IMPORTACIONES.html#cb14-4" tabindex="-1"></a>                    <span class="st">&quot;CreditosOrdinarios&quot;</span>,</span>
+<span id="cb14-5"><a href="IMPORTACIONES.html#cb14-5" tabindex="-1"></a>                    <span class="st">&quot;CreditosPreferenciales&quot;</span>,</span>
+<span id="cb14-6"><a href="IMPORTACIONES.html#cb14-6" tabindex="-1"></a>                    <span class="st">&quot;TasaColocacionBR&quot;</span>,</span>
+<span id="cb14-7"><a href="IMPORTACIONES.html#cb14-7" tabindex="-1"></a>                    <span class="st">&quot;TasaColocacionSinTesoreria&quot;</span>,</span>
+<span id="cb14-8"><a href="IMPORTACIONES.html#cb14-8" tabindex="-1"></a>                    <span class="st">&quot;TasaColocacionTotal&quot;</span>)</span>
+<span id="cb14-9"><a href="IMPORTACIONES.html#cb14-9" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="IMPORTACIONES.html#cb14-10" tabindex="-1"></a>df<span class="sc">$</span>Fecha <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">as.numeric</span>(df<span class="sc">$</span>Fecha), <span class="at">origin =</span> <span class="st">&quot;1899-12-30&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in as.Date(as.numeric(df$Fecha), origin = &quot;1899-12-30&quot;): NAs
+## introducidos por coerción</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="IMPORTACIONES.html#cb16-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Fecha))</span>
+<span id="cb16-2"><a href="IMPORTACIONES.html#cb16-2" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>## # A tibble: 330 × 8
+##    Fecha      CreditosConsumo CreditosTesoreria CreditosOrdinarios
+##    &lt;date&gt;               &lt;dbl&gt;             &lt;dbl&gt;              &lt;dbl&gt;
+##  1 1998-03-31            42.2              37.2               36.5
+##  2 1998-04-30            44.1              41.6               38.8
+##  3 1998-05-31            45.3              37.8               40.3
+##  4 1998-06-30            48.4              56.4               47.1
+##  5 1998-07-31            51.6              42.7               48.1
+##  6 1998-08-31            50.5              37.1               43.7
+##  7 1998-09-30            51.1              49.9               46.4
+##  8 1998-10-31            52.0              47.3               49.5
+##  9 1998-11-30            52.3              43.4               47.6
+## 10 1998-12-31            51.6              40.0               46.1
+## # ℹ 320 more rows
+## # ℹ 4 more variables: CreditosPreferenciales &lt;dbl&gt;, TasaColocacionBR &lt;dbl&gt;,
+## #   TasaColocacionSinTesoreria &lt;dbl&gt;, TasaColocacionTotal &lt;dbl&gt;</code></pre>
+</div>
+<div id="exploracion-inicial" class="section level3 hasAnchor" number="1.0.3">
+<h3><span class="header-section-number">1.0.3</span> Exploracion inicial<a href="IMPORTACIONES.html#exploracion-inicial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="naturaleza-de-los-datos" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Naturaleza de los datos<a href="IMPORTACIONES.html#naturaleza-de-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table class="table table-striped table-hover table-condensed" style="font-size: 10px; color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:unnamed-chunk-3">Table 1.1: </span><span id="tab:unnamed-chunk-3">Table 1.2: </span>Descripcion de Variables del Dataset de Tasas de Interes (Colocacion)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Tipo
+</th>
+<th style="text-align:left;">
+Definicion
+</th>
+<th style="text-align:left;">
+Escala_de_Medicion
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 3cm; font-weight: bold;">
+Fecha
+</td>
+<td style="text-align:left;width: 3cm; ">
+Temporal
+</td>
+<td style="text-align:left;width: 8cm; ">
+Fecha de registro mensual de la serie
+</td>
+<td style="text-align:left;width: 2.5cm; ">
+Intervalo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; font-weight: bold;">
+CreditosConsumo
+</td>
+<td style="text-align:left;width: 3cm; ">
+Numerica continua
+</td>
+<td style="text-align:left;width: 8cm; ">
+Porcentaje de creditos de consumo otorgados
+</td>
+<td style="text-align:left;width: 2.5cm; ">
+Razon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; font-weight: bold;">
+CreditosTesoreria
+</td>
+<td style="text-align:left;width: 3cm; ">
+Numerica continua
+</td>
+<td style="text-align:left;width: 8cm; ">
+Porcentaje de creditos de tesoreria otorgados
+</td>
+<td style="text-align:left;width: 2.5cm; ">
+Razon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; font-weight: bold;">
+CreditosOrdinarios
+</td>
+<td style="text-align:left;width: 3cm; ">
+Numerica continua
+</td>
+<td style="text-align:left;width: 8cm; ">
+Porcentaje de creditos ordinarios otorgados
+</td>
+<td style="text-align:left;width: 2.5cm; ">
+Razon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; font-weight: bold;">
+CreditosPreferenciales
+</td>
+<td style="text-align:left;width: 3cm; ">
+Numerica continua
+</td>
+<td style="text-align:left;width: 8cm; ">
+Porcentaje de creditos preferenciales otorgados
+</td>
+<td style="text-align:left;width: 2.5cm; ">
+Razon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; font-weight: bold;">
+TasaColocacionBR
+</td>
+<td style="text-align:left;width: 3cm; ">
+Numerica continua
+</td>
+<td style="text-align:left;width: 8cm; ">
+Tasa de colocacion del Banco de la Republica
+</td>
+<td style="text-align:left;width: 2.5cm; ">
+Razon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; font-weight: bold;">
+TasaColocacionSinTesoreria
+</td>
+<td style="text-align:left;width: 3cm; ">
+Numerica continua
+</td>
+<td style="text-align:left;width: 8cm; ">
+Tasa de colocacion sin incluir creditos de tesoreria
+</td>
+<td style="text-align:left;width: 2.5cm; ">
+Razon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3cm; font-weight: bold;">
+TasaColocacionTotal
+</td>
+<td style="text-align:left;width: 3cm; ">
+Numerica continua
+</td>
+<td style="text-align:left;width: 8cm; ">
+Tasa de colocacion total del sistema
+</td>
+<td style="text-align:left;width: 2.5cm; ">
+Razon
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="caracteristicas-del-dataset" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Caracteristicas del dataset<a href="IMPORTACIONES.html#caracteristicas-del-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="IMPORTACIONES.html#cb18-1" tabindex="-1"></a><span class="fu">str</span>(df)</span></code></pre></div>
+<pre><code>## tibble [330 × 8] (S3: tbl_df/tbl/data.frame)
+##  $ Fecha                     : Date[1:330], format: &quot;1998-03-31&quot; &quot;1998-04-30&quot; ...
+##  $ CreditosConsumo           : num [1:330] 42.2 44.1 45.3 48.4 51.6 ...
+##  $ CreditosTesoreria         : num [1:330] 37.2 41.6 37.8 56.4 42.7 ...
+##  $ CreditosOrdinarios        : num [1:330] 36.5 38.8 40.3 47.1 48.1 ...
+##  $ CreditosPreferenciales    : num [1:330] 35.2 39.6 36.3 49.6 45.5 ...
+##  $ TasaColocacionBR          : num [1:330] 37.1 40.6 39.7 50.5 46.4 ...
+##  $ TasaColocacionSinTesoreria: num [1:330] 37.1 40.3 40.1 48.3 47.9 ...
+##  $ TasaColocacionTotal       : num [1:330] 37.2 41.1 38.9 53.5 44.4 ...</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="IMPORTACIONES.html#cb20-1" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 8
+##   Fecha      CreditosConsumo CreditosTesoreria CreditosOrdinarios
+##   &lt;date&gt;               &lt;dbl&gt;             &lt;dbl&gt;              &lt;dbl&gt;
+## 1 1998-03-31            42.2              37.2               36.5
+## 2 1998-04-30            44.1              41.6               38.8
+## 3 1998-05-31            45.3              37.8               40.3
+## 4 1998-06-30            48.4              56.4               47.1
+## 5 1998-07-31            51.6              42.7               48.1
+## 6 1998-08-31            50.5              37.1               43.7
+## # ℹ 4 more variables: CreditosPreferenciales &lt;dbl&gt;, TasaColocacionBR &lt;dbl&gt;,
+## #   TasaColocacionSinTesoreria &lt;dbl&gt;, TasaColocacionTotal &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="IMPORTACIONES.html#cb22-1" tabindex="-1"></a><span class="fu">dim</span>(df)</span></code></pre></div>
+<pre><code>## [1] 330   8</code></pre>
+<p>El dataset cuenta con 8 variables todas numericas con 330 observaciones, se asemeja a un panel temporal que registra la evolución de distintos tipos de créditos y tasas de colocación en el sistema financiero lo cual serveria para un analisis. La varibale Fecha es fundamental ya que en ella se fundamentara nuestro analisis como serie temporal</p>
+</div>
+<div id="revision-de-datos-faltantes" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Revision de datos faltantes<a href="IMPORTACIONES.html#revision-de-datos-faltantes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="IMPORTACIONES.html#cb24-1" tabindex="-1"></a><span class="fu">missmap</span>(df)</span></code></pre></div>
+<pre><code>## Warning: Unknown or uninitialised column: `arguments`.
+## Unknown or uninitialised column: `arguments`.</code></pre>
+<pre><code>## Warning: Unknown or uninitialised column: `imputations`.</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Aca podemos observar que nuestro dataset no presenta ningun tipo de valor faltante lo que nos ayudara a la realizacion de la serie de Tiempo de manera mas efectiva</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="analisis-univariado.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/01-EDA.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
